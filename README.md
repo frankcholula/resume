@@ -18,10 +18,12 @@ Here's my user settings for `latex-workshop`, you can configure yours by pressin
 ```json
 {
     // latex-workshop
-    "latex-workshop.latex.outDir": "./out",
+    "latex-workshop.latex.outDir": "./.out",
     "latex-workshop.view.pdf.viewer": "tab",
     "latex-workshop.synctex.afterBuild.enabled": true,
 }
+
+Press `cmd+shift+p` again and search `reopen in container` and voilà!
 ```
 
 ## Github Actions
