@@ -12,6 +12,11 @@ I tried to use [latex-docker](https://github.com/xu-cheng/latex-docker) image fo
 Make sure you first sync your [`overleaf`](https://overleaf.com) files with the `Github` feature on their website.
 
 I am using VS code's [development container feature](https://code.visualstudio.com/docs/devcontainers/containers) and I referenced the [`mrchoke/texlive`](https://hub.docker.com/r/mrchoke/texlive) image in my `devcontainer.json`.
+
+If you don't have the image locally,
+```bash
+make pull
+```
 Here's my user settings for `latex-workshop`, you can configure yours by pressing `cmd + shift + p` and search for `user settings`.
 ```json
 {
