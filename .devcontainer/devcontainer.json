@@ -1,0 +1,11 @@
+{
+    "name": "latex-env",
+    "image": "mrchoke/texlive:latest",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "James-Yu.latex-workshop"
+            ]
+        }
+    }
+}
