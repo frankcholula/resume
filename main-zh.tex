@@ -43,9 +43,12 @@
 % The paracol package lets you typeset columns of text in parallel
 \usepackage{paracol}
 \usepackage{xeCJK}
-\setCJKmainfont{Droid Sans Fallback}
-\setCJKsansfont{WenQuanYi Zen Hei}
-\setCJKmonofont{cwTeXFangSong}
+\setCJKmainfont{Noto Serif CJK TC}
+\setCJKmonofont{Noto Serif CJK TC}
+\setCJKsansfont{Noto Serif CJK TC}
+\XeTeXlinebreaklocale "zh" %文字間隔
+
+\XeTeXlinebreakskip = 0pt plus 1pt
 
 % Change the font if you want to, depending on whether
 % you're using pdflatex or xelatex/lualatex
@@ -103,8 +106,8 @@
 \renewcommand{\ratingmarker}{\faLeaf}
 
 \begin{document}
-\name{Frank Lü}
-\tagline{Data Infrastructure Engineer • Software Engineer}
+\name{呂祖方 Frank Lü}
+\tagline{資深數據工程師 • 軟體工程師}
 %% You can add multiple photos on the left or right
 \photoL{4cm}{frank-lu}
 
@@ -115,7 +118,7 @@
     \homepage{frankcholula.notion.site} \\
     \email{tsufanglu@email.com}\smallskip
     % \phone{+01-2345-678901}
-    \location{Taiwan | USA | Remote}
+    \location{台灣 | 美國 | 遠端}
     % \npm{npmUser}
     % \dev{devtoUser}
     %\homepage{nicolasomar.me}
@@ -142,22 +145,22 @@
 % break across pages if things get too long.
 \begin{paracol}{2}
     % ----- DATA TOOLS -----
-    \cvsection{Data Tools}
-    \cvsubsection{Data Science and Analytics}
+    \cvsection{數據 Tech Stack}
+    \cvsubsection{數據科學}
     \cvskill{Snowflake}{5}
     \cvskill{Numpy|Pandas}{4}
     \cvskill{DBT}{4}
     \cvskill{PySpark}{3}
     \medskip
 
-    \cvsubsection{Data Engineering}
+    \cvsubsection{數據工程}
     \cvskill{Dagster}{5}
     \cvskill{Airflow}{5}
     \cvskill{Debezium}{4}
     \cvskill{Kafka}{4}
     \medskip
 
-    \cvsubsection{Data Infrastructure}
+    \cvsubsection{雲端架構}
     \cvskill{K8S|Helm}{4}
     \cvskill{AWS}{4}
     \cvskill{Datadog}{4}
@@ -165,28 +168,28 @@
     % ----- DATA TOOLS -----
 
     % ----- PROGRAMMING -----
-    \cvsection{Programming}
+    \cvsection{軟體 Tech Stack}
 
-    \cvsubsection{Frontend}
+    \cvsubsection{前端}
     \cvskill{React.js}{3}
     \medskip
 
-    \cvsubsection{Backend}
+    \cvsubsection{後端}
     \cvskill{Python}{5}
     \cvskill{Node.js}{4}
     \cvskill{Java}{4}
     \medskip
 
-    \cvsubsection{Database | Infrastructure}
+    \cvsubsection{資料庫 | 架構}
     \cvskill{SQL}{5}
     \cvskill{Terraform}{4}
     % ----- PROGRAMMING -----
 
     % ----- LANGUAGES -----
-    \cvsection{Languages}
-    \cvlang{English}{Native}\\
+    \cvsection{語言}
+    \cvlang{英文}{母語}\\
     \divider
-    \cvlang{Chinese}{Native}\\
+    \cvlang{中文}{母語}\\
     %% Yeah I didn't spend too much time making all the
     %% spacing consistent... sorry. Use \smallskip, \medskip,
     %% \bigskip, \vpsace etc to make ajustments.
@@ -243,33 +246,33 @@
     \switchcolumn
 
     % ----- ABOUT ME -----
-    \cvsection{About Me}
+    \cvsection{關於我}
     \begin{quote}
-        Hello! I empower data scientists and data analysts by building scalable data infrastructures and data tools. My experience spans real estate, healthcare, and logistics. I’m interested in green tech/climate change-related jobs, preferably fully remote or hybrid.
+        你好，我是Frank，擁有8年的數據工程和資料科學經驗。我擅長通過雲端架構和數據平台設計，提升數據科學家和數據分析師的開發者體驗。我在房地產、醫療和物流領域有豐富的數據工程經驗。我的期望是將專業數據知識應用於ESG、綠色科技和氣候變化相關的領域。
     \end{quote}
     % ----- ABOUT ME -----
     % ----- EDUCATION -----
-    \cvsection{Education}
-    \cvevent{Electrical Engineering and Computer Science }{| UC Berkeley}{Jun 2012 -- Jun 2016}{CA, USA}
+    \cvsection{教育背景}
+    \cvevent{電機工程與資訊工程}{加州大學伯克利分校}{2012年6月 -- 2016年6月}{美國，加州}
     \begin{itemize}
-        \item Minor in Mechanical Engineering
+        \item 輔修機械工程
     \end{itemize}
     % ----- EDUCATION -----
     % ----- EXPERIENCE -----
-    \cvsection{Experience}
-    \cvevent{Senior Data Platform Engineer • Infra Engineer}{| Flexport}{Jun 2019 -- Jan 2023}{CA, USA}
+    \cvsection{工作經驗}
+    \cvevent{高階數據平台工程師 • 雲端架構師}{Flexport}{2019年6月 -- 2023年1月}{美國，加州}
     \begin{itemize}
-        \item Implemented Kafka on Kubernetes with Strimzi and cluster re-balancing using Cruise Control, migrated Airflow DAGs to Dagster for data pipeline orchestration, and established a self-service software catalog for microservices using Backstage with full-fledged CICD and infrastructure provisioning in Github Actions.
-        \item Deployed 3 automated shipping assignment and consolidation models for ocean, air, and trucking using the FICO Xpress Optimization tool and turned the respective models into services.
-        \item Designed and implemented Flexport's Data Mesh vision by leading a team of 3 engineers to modernize the analytics stack with Snowflake, DBT, and Looker.
+        \item 利用Kubernetes建立了Kafka cluster，並部署了 Cruise Control 來處理 Kafka Broker的集群負載平衡機制。同時，將Airflow的DAGs遷移至Dagster以優化 Data Pipeline的編排。除此之外，使用Backstage 和 Github Actions 建立一個具有CI/CD功能的微服務軟體目錄。
+        \item 使用FICO Xpress 製作了物流數據模型，以解決物流的混合整數規劃問題。這些模型包含了海運、空運和卡車運輸的裝運分派和集運方法，並將相應的模型轉化為微服務的 API 端點。
+        \item 領導一支由三名工程師組成的團隊實施Flexport的 Data Mesh 的願景，運用了Snowflake、DBT和Looker等技術，成功的為 Flexport 創建了全新的數據分析平台。
     \end{itemize}
     \divider
 
-    \cvevent{Software Engineer II • Data Scientist I}{| Virta Health}{May 2018 -- Apr 2019}{CA, USA}
+    \cvevent{中階軟體工程師 • 資料科學家}{Virta Health}{2018年5月 -- 2019年4月}{美國，加州}
     \begin{itemize}
-        \item Standardized data science model-deployment workflow and hyper-parameter tuning with Amazon Sagemaker.
-        \item Created and optimized two ML models. One model tracks patient retention for health coaches and the other one predicts a patient’s weight given a patient’s A1C level.
-        \item Worked with the clinician experience team to design and create a supervised learning DKA(Diabetic Ketoacidosis) model, with a 75 percent accuracy rate of predicting patient with the complication.
+        \item 使用Amazon Sagemaker 建置及培訓病人A1C模型和部署託管環境以及調整超參數。
+        \item 創建兩個機器學習模型，一個模型追蹤並提升病人留存率，另一個模型預測病人的A1C水平。
+        \item 我與臨床經驗團隊合作，設計並創建了一個監督學習的糖尿病酮症酸中毒（DKA）模型，該模型能以75％的準確率預測患有此併發症的患者。
     \end{itemize}
     % ----- EXPERIENCE -----
 \end{paracol}
