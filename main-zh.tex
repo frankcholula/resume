@@ -1,0 +1,279 @@
+%%%%%%%%%%%%%%%%%
+% This is an sample CV template created using altacv.cls
+% (v1.3, 10 May 2020) written by LianTze Lim (liantze@gmail.com). Now compiles with pdfLaTeX, XeLaTeX and LuaLaTeX.
+% This fork/modified version has been made by Nicolás Omar González Passerino (nicolas.passerino@gmail.com, 15 Oct 2020)
+%
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2003/12/01 or later.
+%%%%%%%%%%%%%%%%
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork (before v1.6.5a): CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,ragged2e,withhyper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+%% AltaCV uses the fontawesome5 and academicons fonts
+%% and packages.
+%% See http://texdoc.net/pkg/fontawesome5 and http://texdoc.net/pkg/academicons for full list of symbols. You MUST compile with XeLaTeX or LuaLaTeX if you want to use academicons.
+
+% Change the page layout if you need to
+% A4
+\geometry{left=15.24mm,right=15.24mm,top=12.7mm,bottom=17.018mm,columnsep=0.75cm}
+% US Letter
+% \geometry{left=20.32mm,right=13.97mm,top=12.7mm,bottom=12.7mm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{xeCJK}
+\setCJKmainfont{Noto Serif CJK TC}
+\setCJKmonofont{Noto Serif CJK TC}
+\setCJKsansfont{Noto Serif CJK TC}
+\XeTeXlinebreaklocale "zh" %文字間隔
+
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage{bookmark}
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% Fork (before v1.6.5a): Change the color codes to test your personal variant on any mode
+% Using solarized dark
+\ifdarkmode%
+  \definecolor{PrimaryColor}{HTML}{2AA198}
+  \definecolor{SecondaryColor}{HTML}{D33682}
+  \definecolor{ThirdColor}{HTML}{B58900}
+  \definecolor{BodyColor}{HTML}{EEE8D5}
+  \definecolor{EmphasisColor}{HTML}{EEE8D5}
+  \definecolor{BackgroundColor}{HTML}{073642}
+\else%
+  \definecolor{PrimaryColor}{HTML}{18392B}
+  \definecolor{SecondaryColor}{HTML}{85AA9B}
+  \definecolor{ThirdColor}{HTML}{588B76}
+  \definecolor{BodyColor}{HTML}{073642}
+  \definecolor{EmphasisColor}{HTML}{073642}
+  \definecolor{BackgroundColor}{HTML}{ECEDE8}
+\fi%
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{SecondaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faLeaf}
+
+\begin{document}
+\name{呂祖方 Frank Lü}
+\tagline{資深數據工程師 • 軟體工程師}
+%% You can add multiple photos on the left or right
+\photoL{4cm}{frank-lu}
+
+\personalinfo{
+    \linkedin{frankcholula}
+    % \medium{frankcholula}
+    \github{frankcholula}
+    \homepage{frankcholula.notion.site} \\
+    \email{tsufanglu@email.com}\smallskip
+    % \phone{+01-2345-678901}
+    \location{台灣 | 美國 | 遠端}
+    % \npm{npmUser}
+    % \dev{devtoUser}
+    %\homepage{nicolasomar.me}
+    %\medium{nicolasomar}
+    %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+    % \orcid{0000-0000-0000-0000}
+    %% You can add your own arbtrary detail with
+    %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+    % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+    %% Or you can declare your own field with
+    %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+    % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+    % \gitlab{your_id}
+}
+
+\makecvheader
+%% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+% \AtBeginEnvironment{itemize}{\small}
+
+%% Set the left/right column width ratio to 6:4.
+\columnratio{0.30}
+
+% Start a 2-column paracol. Both the left and right columns will automatically
+% break across pages if things get too long.
+\begin{paracol}{2}
+    % ----- DATA TOOLS -----
+    \cvsection{數據 Tech Stack}
+    \cvsubsection{數據科學}
+    \cvskill{Snowflake}{5}
+    \cvskill{Numpy|Pandas}{4}
+    \cvskill{DBT}{4}
+    \cvskill{PySpark}{3}
+    \medskip
+
+    \cvsubsection{數據工程}
+    \cvskill{Dagster}{5}
+    \cvskill{Airflow}{5}
+    \cvskill{Debezium}{4}
+    \cvskill{Kafka}{4}
+    \medskip
+
+    \cvsubsection{雲端架構}
+    \cvskill{K8S|Helm}{4}
+    \cvskill{AWS}{4}
+    \cvskill{Datadog}{4}
+
+    % ----- DATA TOOLS -----
+
+    % ----- PROGRAMMING -----
+    \cvsection{軟體 Tech Stack}
+
+    \cvsubsection{前端}
+    \cvskill{React.js}{3}
+    \medskip
+
+    \cvsubsection{後端}
+    \cvskill{Python}{5}
+    \cvskill{Node.js}{4}
+    \cvskill{Java}{4}
+    \medskip
+
+    \cvsubsection{資料庫 | 架構}
+    \cvskill{SQL}{5}
+    \cvskill{Terraform}{4}
+    % ----- PROGRAMMING -----
+
+    % ----- LANGUAGES -----
+    \cvsection{語言}
+    \cvlang{英文}{母語}\\
+    \divider
+    \cvlang{中文}{母語}\\
+    %% Yeah I didn't spend too much time making all the
+    %% spacing consistent... sorry. Use \smallskip, \medskip,
+    %% \bigskip, \vpsace etc to make ajustments.
+    % ----- LANGUAGES -----
+    % ----- PROJECTS -----
+    % \cvsection{Projects}
+    %     \cvevent{Project 1 }{\cvreference{| \faGithub}{https://github.com/user/repo}\cvreference{| \faGlobe}{https://repo-demo.com/}}{Mm YYYY -- Mm YYYY}{}
+    %     \begin{itemize}
+    %         \item Item 1
+    %         \item Item 2
+    %     \end{itemize}
+
+    % ----- PROJECTS -----
+    % ----- REFERENCES -----
+    % \cvsection{References}
+    %     \cvreference{Ref 1}{ref-1}
+    %     \medskip
+
+    %     \cvreference{Ref 2}{ref-2}
+    %     \medskip
+
+    %     \cvreference{Ref 3}{ref-3}
+    % ----- REFERENCES -----
+
+    % ----- MOST PROUD -----
+    % \cvsection{Most Proud of}
+
+    % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+    % \divider
+    % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+    % \divider
+    % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+    % ----- MOST PROUD -----
+
+    % \cvsection{A Day of My Life}
+
+    % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+    % \wheelchart{outer radius}{inner radius}{
+    % comma-separated list of value/text width/color/detail}
+    % \wheelchart{1.5cm}{0.5cm}{%
+    %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+    %   3/8em/accent!40/Hopeful novelist by night,
+    %   8/8em/accent!60/Daytime job,
+    %   2/10em/accent/Sports and relaxation,
+    %   5/6em/accent!20/Spending time with family
+    % }
+
+    % use ONLY \newpage if you want to force a page break for
+    % ONLY the current column
+    \newpage
+
+    %% Switch to the right column. This will now automatically move to the second
+    %% page if the content is too long.
+    \switchcolumn
+
+    % ----- ABOUT ME -----
+    \cvsection{關於我}
+    \begin{quote}
+        你好，我是Frank，擁有8年的數據工程和資料科學經驗。我擅長通過雲端架構和數據平台設計，提升數據科學家和數據分析師的開發者體驗。我在房地產、醫療和物流領域有豐富的數據工程經驗。我的期望是將專業數據知識應用於ESG、綠色科技和氣候變化相關的領域。
+    \end{quote}
+    % ----- ABOUT ME -----
+    % ----- EDUCATION -----
+    \cvsection{教育背景}
+    \cvevent{電機工程與資訊工程}{加州大學伯克利分校}{2012年6月 -- 2016年6月}{美國，加州}
+    \begin{itemize}
+        \item 輔修機械工程
+    \end{itemize}
+    % ----- EDUCATION -----
+    % ----- EXPERIENCE -----
+    \cvsection{工作經驗}
+    \cvevent{高階數據平台工程師 • 雲端架構師}{Flexport}{2019年6月 -- 2023年1月}{美國，加州}
+    \begin{itemize}
+        \item 利用Kubernetes建立了Kafka cluster，並部署了 Cruise Control 來處理 Kafka Broker的集群負載平衡機制。同時，將Airflow的DAGs遷移至Dagster以優化 Data Pipeline的編排。除此之外，使用Backstage 和 Github Actions 建立一個具有CI/CD功能的微服務軟體目錄。
+        \item 使用FICO Xpress 製作了物流數據模型，以解決物流的混合整數規劃問題。這些模型包含了海運、空運和卡車運輸的裝運分派和集運方法，並將相應的模型轉化為微服務的 API 端點。
+        \item 領導一支由三名工程師組成的團隊實施Flexport的 Data Mesh 的願景，運用了Snowflake、DBT和Looker等技術，成功的為 Flexport 創建了全新的數據分析平台。
+    \end{itemize}
+    \divider
+
+    \cvevent{中階軟體工程師 • 資料科學家}{Virta Health}{2018年5月 -- 2019年4月}{美國，加州}
+    \begin{itemize}
+        \item 使用Amazon Sagemaker 建置及培訓病人A1C模型和部署託管環境以及調整超參數。
+        \item 創建兩個機器學習模型，一個模型追蹤並提升病人留存率，另一個模型預測病人的A1C水平。
+        \item 我與臨床經驗團隊合作，設計並創建了一個監督學習的糖尿病酮症酸中毒（DKA）模型，該模型能以75％的準確率預測患有此併發症的患者。
+    \end{itemize}
+    % ----- EXPERIENCE -----
+\end{paracol}
+\end{document}

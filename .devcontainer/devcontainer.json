@@ -1,6 +1,6 @@
 {
     "name": "latex-env",
-    "image": "mrchoke/texlive:latest",
+    "image": "qmcgaw/latexdevcontainer:latest-full",
     "customizations": {
         "vscode": {
             "extensions": [
